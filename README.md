@@ -58,7 +58,7 @@ devhelper
 
 Comandi disponibili nell'interfaccia:
 ```
-list [depth]      - Lista file del progetto
+list [depth]      - Lista file del progetto "devhelper list --depth 'insert depth'
 read <file>       - Leggi contenuto di un file  
 modify <file>     - Modifica file con AI
 copy <file>       - Copia file negli appunti
@@ -238,10 +238,10 @@ MIT License - vedi il file [LICENSE](LICENSE) per i dettagli.
 
 ```bash
 # Installa
-pip install git+https://github.com/tuousername/devhelper.git
+pip install git+https://github.com/GiovanniPecelli/devhelper.git
 
 # Configura
-devhelper init
+devhelper init (quando dobbiamo aggiornare un file importante)
 
 # Usa!
 devhelper
@@ -251,3 +251,7 @@ devhelper
 ```
 
 Fatto! Ora hai un assistente AI sempre a portata di terminale. 🚀
+
+# Da ricordare
+- devhelper init (quando dobbiamo aggiornare un file importante)
+- per eseguire i commandi su file in ai_agent = devhelper 'command' ai_agent\nome_del_file.py
