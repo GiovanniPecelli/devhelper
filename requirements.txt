@@ -1,3 +1,11 @@
+# Core dependencies
 google-generativeai
+click
 python-dotenv
 pyperclip
+
+# Development dependencies (optionals)
+pytest
+black
+flake8
+mypy
