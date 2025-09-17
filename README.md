@@ -1,19 +1,37 @@
-Questo progetto contiene `DevHelper`, un agente AI per aiutarti a leggere, modificare e copiare file all'interno di un progetto Python.
+# DevHelper - Python AI Agent
 
-## Comandi disponibili
+DevHelper is an AI agent that helps you read, modify, and analyze project files directly from the terminal or as a Python library.
 
-- `list` → lista tutti i file del progetto
-- `read [file]` → legge un file specifico
-- `modify [file]` → modifica un file secondo un'istruzione
-- `copy [file]` → copia il contenuto del file negli appunti
-- `ask [domanda]` → chiedi qualcosa all'agente
-- `quit` → esci dall'agente
+## Install DevHelper from Git
+To use DevHelper in another project, install it directly from the Git repository:
 
-## Backup
-Ogni modifica fatta con `modify` genera automaticamente un backup nella cartella `backups/` con timestamp.
+```bash
+- pip install git+https://github.com/GiovanniPecelli/devhelper.git
 
-## Come usare
-Esegui `main.py` e usa i comandi sopra per interagire con l'agente.
+- pip install -r requirements.txt
 
-## IMPORT LIBRARIES from requirments.txt
-execute this command in the terminal (in the main root): "pip install -r requirements.txt"
+## Import devhelper in your project
+
+from agent_core import Agent, list_project_files, read_file, copy_file_to_clipboard
+
+# Initialize the agent
+agent = Agent("DevHelper")
+
+# Example usage
+print(agent.ask("Analyze my checkout code"))
+
+# Main functions available:
+# - list_project_files() – lists all files in the project
+# - read_file(file_path) – reads a file
+# - copy_file_to_clipboard(file_path) – copies a file's content to the clipboard
+# - agent.modify_file(file_path, instruction) – modifies a file based on instructions using AI
+
+# Run DevHelper as CLI
+
+You can run DevHelper interactively from the terminal:
+
+- python devhelper.py
+
+# Set your Google API key in .env:
+
+GOOGLE_API_KEY=your_api_key_here

@@ -1,12 +1,18 @@
 from setuptools import setup, find_packages
 
 setup(
-    name="devhelper",
-    version="0.1",
+    name="ai-agent",
+    version="0.1.0",
     packages=find_packages(),
     install_requires=[
-        "python-dotenv",
         "google-generativeai",
+        "python-dotenv",
         "pyperclip"
     ],
+    entry_points={
+        "console_scripts": [
+            "devhelper=main:main",  # main.py → main()
+        ],
+    },
 )
+

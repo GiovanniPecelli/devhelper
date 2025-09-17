@@ -36,8 +36,20 @@ def write_file(file_path: str, content: str):
     with open(file_path, "w", encoding="utf-8") as f:
         f.write(content)
 
-def list_project_files(directory="."):
-    return [str(p) for p in Path(directory).rglob("*") if p.is_file()]
+def list_project_files(directory=".", max_depth=1):
+    """
+    Restituisce i file fino a una profondità massima (default 1 = root + prime sottocartelle)
+    """
+    base_path = Path(directory).resolve()
+    files = []
+
+    for path in base_path.rglob("*"):
+        if path.is_file():
+            # calcolo profondità relativa
+            depth = len(path.relative_to(base_path).parts)
+            if depth <= max_depth:
+                files.append(str(path))
+    return files
 
 def copy_file_to_clipboard(file_path: str) -> str:
     content = read_file(file_path)
